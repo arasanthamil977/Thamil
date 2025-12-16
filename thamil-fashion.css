@@ -128,7 +128,7 @@ nav.scrolled {
 }
 
 
-/*
+
 .logo-link {
 	display: flex;
 	align-items: center;
@@ -154,7 +154,9 @@ nav.scrolled {
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
-*/
+
+
+
 .nav-links {
 	display: flex;
 	gap: 30px;
@@ -1978,6 +1980,7 @@ footer {
 	}
 
 }
+
 
 
 
