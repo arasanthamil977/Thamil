@@ -69,6 +69,8 @@ nav.scrolled {
 }
 /* ===== THAMIL LOGO ANIMATION ===== */
 
+/* ===== THAMIL LOGO ANIMATION ===== */
+
 #logo,
 .logo,
 .thamil-logo {
@@ -128,6 +130,7 @@ nav.scrolled {
     0 0 10px currentColor,
     0 0 20px rgba(255, 255, 255, 0.4);
 }
+
 
 /*
 .logo-link {
@@ -1979,4 +1982,5 @@ footer {
 	}
 
 }
+
 
