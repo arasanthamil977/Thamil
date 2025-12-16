@@ -71,64 +71,62 @@ nav.scrolled {
 
 /* ===== THAMIL LOGO ANIMATION ===== */
 
-#logo,
-.logo,
-.thamil-logo {
-  font-size: 48px;
-  font-weight: 800;
-  letter-spacing: 6px;
-  text-transform: uppercase;
-  display: inline-block;
-  position: relative;
-
-  /* Initial color */
-  color: #ff0055;
-
-  /* Animation */
-  animation: thamilMoveColor 10s linear infinite;
+/* Floating motion for entire logo */
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  animation: logoFloat 4s ease-in-out infinite;
 }
 
-/* Keyframes for movement + color change */
-@keyframes thamilMoveColor {
-  0% {
-    transform: translateX(0) scale(1);
-    color: #ff0055;
-  }
-
-  20% {
-    transform: translateX(40px) scale(1.05);
-    color: #ff9800;
-  }
-
-  40% {
-    transform: translateX(0) scale(1.1);
-    color: #4caf50;
-  }
-
-  60% {
-    transform: translateX(-40px) scale(1.05);
-    color: #2196f3;
-  }
-
-  80% {
-    transform: translateX(0) scale(1.1);
-    color: #9c27b0;
-  }
-
-  100% {
-    transform: translateX(0) scale(1);
-    color: #ff0055;
-  }
+.logo-link:hover {
+  transform: scale(1.08) rotate(-1deg);
 }
 
-/* Optional glow effect */
-#logo,
-.logo,
-.thamil-logo {
-  text-shadow:
-    0 0 5px currentColor,
-    0 0 10px currentColor,
-    0 0 20px rgba(255, 255, 255, 0.4);
+/* SVG pulse (if used) */
+.logo-svg {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  animation: svgPulse 2.5s ease-in-out infinite;
+}
+
+/* Animated gradient text */
+.logo-text {
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  background: linear-gradient(
+    270deg,
+    #ff3cac,
+    #784ba0,
+    #2b86c5,
+    #00dbde,
+    #ff3cac
+  );
+  background-size: 800% 800%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textGradient 10s linear infinite;
+}
+
+/* Keyframes */
+
+@keyframes logoFloat {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-4px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes svgPulse {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.1); }
+}
+
+@keyframes textGradient {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
 }
 
 
@@ -1982,5 +1980,6 @@ footer {
 	}
 
 }
+
 
 
