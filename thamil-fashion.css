@@ -67,7 +67,69 @@ nav.scrolled {
 	flex-wrap: wrap;
 	gap: 20px;
 }
+/* ===== THAMIL LOGO ANIMATION ===== */
 
+#logo,
+.logo,
+.thamil-logo {
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  display: inline-block;
+  position: relative;
+
+  /* Initial color */
+  color: #ff0055;
+
+  /* Animation */
+  animation: thamilMoveColor 10s linear infinite;
+}
+
+/* Keyframes for movement + color change */
+@keyframes thamilMoveColor {
+  0% {
+    transform: translateX(0) scale(1);
+    color: #ff0055;
+  }
+
+  20% {
+    transform: translateX(40px) scale(1.05);
+    color: #ff9800;
+  }
+
+  40% {
+    transform: translateX(0) scale(1.1);
+    color: #4caf50;
+  }
+
+  60% {
+    transform: translateX(-40px) scale(1.05);
+    color: #2196f3;
+  }
+
+  80% {
+    transform: translateX(0) scale(1.1);
+    color: #9c27b0;
+  }
+
+  100% {
+    transform: translateX(0) scale(1);
+    color: #ff0055;
+  }
+}
+
+/* Optional glow effect */
+#logo,
+.logo,
+.thamil-logo {
+  text-shadow:
+    0 0 5px currentColor,
+    0 0 10px currentColor,
+    0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+/*
 .logo-link {
 	display: flex;
 	align-items: center;
@@ -93,7 +155,7 @@ nav.scrolled {
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
-
+*/
 .nav-links {
 	display: flex;
 	gap: 30px;
@@ -1917,3 +1979,4 @@ footer {
 	}
 
 }
+
