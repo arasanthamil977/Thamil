@@ -1589,54 +1589,95 @@ footer {
 }
 
 .footer-brand p {
-	color: var(--text-muted);
-	line-height: 1.8;
-	margin-bottom: 30px;
+/* Footer background animation */
+  padding: 40px 20px;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(270deg, #0f2027, #203a43, #2c5364);
+  background-size: 600% 600%;
+  animation: bgMove 12s ease infinite;
 }
 
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
+.footer h3 { margin-bottom: 6px; }
+.footer p { font-size: 14px; opacity: 0.85; }
+
+/* Social container */
 .social-links {
   display: flex;
-  gap: 14px;
-  margin-top: 14px;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
 }
 
-.social-link {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
+/* App-style square icons */
+.social {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
-  font-size: 18px;
+  font-size: 20px;
   text-decoration: none;
-  transition: all 0.35s ease;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+  overflow: hidden;
+  animation: float 3.5s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+
+/* Floating auto-animation */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
 }
 
 /* Brand colors */
 .fb { background: #1877f2; }
-.tw { background: #000000; }
+.tw { background: #000; }
 .ig { background: linear-gradient(45deg,#f58529,#dd2a7b,#8134af); }
 .pt { background: #e60023; }
 
-/* Hover animation */
-.social-link:hover {
-  transform: translateY(-6px) scale(1.12) rotate(6deg);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+/* Neon glow hover */
+.social:hover {
+  transform: scale(1.15);
+  box-shadow:
+    0 0 10px currentColor,
+    0 0 25px currentColor,
+    0 0 45px currentColor;
 }
 
-/* Icon pulse on hover */
-.social-link:hover i {
-  animation: pulse 0.6s ease-in-out;
+/* Ripple click effect */
+.ripple {
+  position: absolute;
+  background: rgba(255,255,255,0.4);
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 0.6s linear;
+  pointer-events: none;
+  display: none;
 }
 
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.25); }
-  100% { transform: scale(1); }
+.social:active .ripple {
+  display: block;
+  width: 120%;
+  height: 120%;
 }
+
+@keyframes ripple {
+  to {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
 
 .footer-column h4 {
 	font-size: 14px;
@@ -1884,4 +1925,5 @@ footer {
 	}
 
 }
+
 
