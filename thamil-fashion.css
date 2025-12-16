@@ -1565,7 +1565,7 @@ nav.scrolled {
 }
 
 /* Footer */
-footer {
+.footer {
 	background: #000;
 	padding: 80px 50px 30px;
 	border-top: 1px solid #222;
@@ -1908,6 +1908,7 @@ footer {
 	}
 
 }
+
 
 
 
