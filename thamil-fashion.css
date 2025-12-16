@@ -1594,30 +1594,82 @@ footer {
 	margin-bottom: 30px;
 }
 
-.social-links {
-	display: flex;
-	gap: 15px;
+.social-links{
+  display:flex;
+  gap:16px;
+  margin-top:16px;
 }
 
-.social-link {
-	width: 40px;
-	height: 40px;
-	border: 1px solid var(--text-muted);
-	border-radius: 50%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	color: var(--text-muted);
-	text-decoration: none;
-	transition: all 0.3s ease;
+/* App-style base */
+.social-link{
+  width:48px;
+  height:48px;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-size:20px;
+  position:relative;
+  overflow:hidden;
+  text-decoration:none;
+  box-shadow:0 10px 25px rgba(0,0,0,0.4);
+  animation: float 4s ease-in-out infinite;
+  transition: all 0.35s ease;
 }
 
-.social-link:hover {
-	background: var(--accent);
-	border-color: var(--accent);
-	color: white;
-	transform: translateY(-3px);
+/* Floating delay */
+.social-link:nth-child(2){animation-delay:.5s}
+.social-link:nth-child(3){animation-delay:1s}
+.social-link:nth-child(4){animation-delay:1.5s}
+
+/* Brand colors */
+.fb{background:#1877f2}
+.tw{background:#000}
+.ig{background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af)}
+.pt{background:#e60023}
+
+/* Neon glow hover */
+.social-link:hover{
+  transform:translateY(-8px) scale(1.15);
+  box-shadow:
+    0 0 15px currentColor,
+    0 0 30px currentColor,
+    0 0 45px currentColor;
 }
+
+/* Ripple */
+.ripple{
+  position:absolute;
+  width:0;
+  height:0;
+  background:rgba(255,255,255,0.6);
+  border-radius:50%;
+  transform:translate(-50%,-50%);
+  pointer-events:none;
+}
+
+.social-link:active .ripple{
+  width:120px;
+  height:120px;
+  animation:ripple 0.6s ease-out;
+}
+
+/* Floating animation */
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-8px)}
+}
+
+/* Ripple animation */
+@keyframes ripple{
+  from{opacity:0.8}
+  to{
+    opacity:0;
+    transform:scale(2.5);
+  }
+}
+
 
 .footer-column h4 {
 	font-size: 14px;
@@ -1863,4 +1915,5 @@ footer {
 		flex-direction: column;
 		text-align: center;
 	}
+
 }
