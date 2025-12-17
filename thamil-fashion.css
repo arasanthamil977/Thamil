@@ -1081,6 +1081,8 @@ html, body {
 
 /* ===== FEATURED SECTION ===== */
 
+
+/* ================= RESET ================= */
 * {
   margin: 0;
   padding: 0;
@@ -1091,16 +1093,17 @@ html, body {
   width: 100%;
   overflow-x: hidden;
   font-family: "Poppins", sans-serif;
+  background: #000;
+  color: #fff;
 }
 
-/* ===== FEATURED SECTION ===== */
+/* ================= FEATURED SECTION ================= */
 
 .featured-container {
   width: 100%;
   min-height: 100vh;
   padding: 90px 6%;
   background: #000;
-  color: #fff;
 }
 
 .featured-hero {
@@ -1111,16 +1114,16 @@ html, body {
   min-height: 100vh;
 }
 
-/* LEFT CONTENT */
+/* ================= LEFT CONTENT ================= */
 
 .featured-content {
   flex: 1;
 }
 
 .label {
-  color: #aaa;
-  letter-spacing: 1px;
+  color: #ff9acb;
   font-size: 13px;
+  letter-spacing: 1px;
   text-transform: uppercase;
 }
 
@@ -1132,109 +1135,91 @@ html, body {
 .featured-content p {
   color: #ccc;
   line-height: 1.8;
-  max-width: 520px;
+  max-width: 540px;
 }
 
-/* HIGHLIGHTS */
+/* ================= NEON HIGHLIGHTS ================= */
 
-/* ===== HIGHLIGHT INTERACTIVE EFFECTS ===== */
+.feature-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 36px 0;
+}
 
 .highlight-item {
-  position: relative;
-  cursor: pointer;
-  transition: 
-    transform 0.35s ease,
-    background 0.35s ease,
-    box-shadow 0.35s ease;
+  padding: 22px;
+  border-radius: 18px; /* square + curved corners */
+  background: rgba(255, 105, 180, 0.08);
+  border: 2px solid rgba(255, 105, 180, 0.7);
+  box-shadow:
+    0 0 14px rgba(255, 105, 180, 0.5),
+    inset 0 0 10px rgba(255, 105, 180, 0.35);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* Gradient glow on hover */
-.highlight-item:hover {
-  transform: translateY(-8px) scale(1.03);
-  background: linear-gradient(
-    135deg,
-    rgba(255, 0, 150, 0.18),
-    rgba(0, 200, 255, 0.18)
-  );
-  box-shadow: 0 20px 40px rgba(255, 0, 150, 0.25);
-}
-
-/* Icon color animation */
-.highlight-icon {
-  transition: transform 0.4s ease, filter 0.4s ease;
-}
-
-.highlight-item:hover .highlight-icon {
-  transform: rotate(-8deg) scale(1.2);
-  filter: drop-shadow(0 0 10px #ff4ecd);
-}
-
-/* Title color shift */
-.highlight-title {
-  transition: color 0.4s ease;
-}
-
-.highlight-item:hover .highlight-title {
-  color: #ff4ecd;
-}
-
-/* Description soft glow */
-.highlight-desc {
-  transition: color 0.4s ease;
-}
-
-.highlight-item:hover .highlight-desc {
-  color: #ffffff;
-}
-
-/* Touch (active) animation */
+.highlight-item:hover,
 .highlight-item:active {
-  transform: scale(0.96);
+  transform: scale(1.07);
+  background: rgba(255, 105, 180, 0.22);
+  box-shadow:
+    0 0 28px rgba(255, 105, 180, 1),
+    0 0 60px rgba(255, 105, 180, 0.8);
 }
 
-/* ===== CTA BUTTON ANIMATION ===== */
+.highlight-icon {
+  font-size: 30px;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 10px hotpink);
+}
+
+.highlight-title {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.highlight-desc {
+  font-size: 14px;
+  color: #f2c2dc;
+}
+
+/* ================= NEON CTA BUTTON ================= */
 
 .feature-cta {
-  position: relative;
-  overflow: hidden;
-  transition: 
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  display: inline-block;
+  padding: 14px 40px;
+  border-radius: 20px;
+  background: transparent;
+  color: #ff69b4;
+  border: 2px solid #ff69b4;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow:
+    0 0 16px rgba(255, 105, 180, 0.8),
+    inset 0 0 12px rgba(255, 105, 180, 0.5);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* Animated gradient sweep */
-.feature-cta::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    120deg,
-    #ff4ecd,
-    #00e5ff,
-    #ff4ecd
-  );
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  z-index: -1;
-}
-
-.feature-cta:hover::before {
-  opacity: 1;
-}
-
-.feature-cta:hover {
-  color: #000;
-  transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 18px 40px rgba(0, 229, 255, 0.45);
-}
-
-/* Button press (mobile touch feel) */
+.feature-cta:hover,
 .feature-cta:active {
-  transform: scale(0.95);
+  background: #ff69b4;
+  color: #000;
+  transform: scale(1.1);
+  box-shadow:
+    0 0 35px rgba(255, 105, 180, 1),
+    0 0 80px rgba(255, 105, 180, 0.9);
 }
 
-
-/* RIGHT IMAGES */
+/* ================= RIGHT IMAGES ================= */
 
 .featured-image-section {
   flex: 1;
@@ -1255,17 +1240,17 @@ html, body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
-/* TESTIMONIALS */
+/* ================= TESTIMONIALS ================= */
 
 .testimonials {
   margin-top: 100px;
   text-align: center;
-  color: #fff;
 }
 
-/* RESPONSIVE */
+/* ================= RESPONSIVE ================= */
 
 @media (max-width: 992px) {
   .featured-hero {
@@ -1282,6 +1267,8 @@ html, body {
   }
 }
 
+
+  
 
 
 
@@ -2203,6 +2190,7 @@ footer {
 	}
 
 }
+
 
 
 
