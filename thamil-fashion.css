@@ -1137,51 +1137,102 @@ html, body {
 
 /* HIGHLIGHTS */
 
-.feature-highlights {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin: 34px 0;
-}
+/* ===== HIGHLIGHT INTERACTIVE EFFECTS ===== */
 
 .highlight-item {
-  background: rgba(255,255,255,0.06);
-  padding: 20px;
-  border-radius: 14px;
-  backdrop-filter: blur(6px);
+  position: relative;
+  cursor: pointer;
+  transition: 
+    transform 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
+/* Gradient glow on hover */
+.highlight-item:hover {
+  transform: translateY(-8px) scale(1.03);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 0, 150, 0.18),
+    rgba(0, 200, 255, 0.18)
+  );
+  box-shadow: 0 20px 40px rgba(255, 0, 150, 0.25);
+}
+
+/* Icon color animation */
 .highlight-icon {
-  font-size: 26px;
+  transition: transform 0.4s ease, filter 0.4s ease;
 }
 
+.highlight-item:hover .highlight-icon {
+  transform: rotate(-8deg) scale(1.2);
+  filter: drop-shadow(0 0 10px #ff4ecd);
+}
+
+/* Title color shift */
 .highlight-title {
-  font-weight: 600;
-  margin-top: 6px;
+  transition: color 0.4s ease;
 }
 
+.highlight-item:hover .highlight-title {
+  color: #ff4ecd;
+}
+
+/* Description soft glow */
 .highlight-desc {
-  font-size: 14px;
-  color: #bbb;
+  transition: color 0.4s ease;
 }
 
-/* CTA */
+.highlight-item:hover .highlight-desc {
+  color: #ffffff;
+}
+
+/* Touch (active) animation */
+.highlight-item:active {
+  transform: scale(0.96);
+}
+
+/* ===== CTA BUTTON ANIMATION ===== */
 
 .feature-cta {
-  display: inline-block;
-  margin-top: 16px;
-  padding: 14px 34px;
-  background: #fff;
-  color: #000;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  transition: 
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Animated gradient sweep */
+.feature-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    #ff4ecd,
+    #00e5ff,
+    #ff4ecd
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+.feature-cta:hover::before {
+  opacity: 1;
 }
 
 .feature-cta:hover {
-  transform: translateY(-3px);
+  color: #000;
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 18px 40px rgba(0, 229, 255, 0.45);
 }
+
+/* Button press (mobile touch feel) */
+.feature-cta:active {
+  transform: scale(0.95);
+}
+
 
 /* RIGHT IMAGES */
 
@@ -2152,6 +2203,7 @@ footer {
 	}
 
 }
+
 
 
 
