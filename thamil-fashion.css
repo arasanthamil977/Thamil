@@ -1890,7 +1890,7 @@ footer {
   position:relative;
   overflow:hidden;
   text-decoration:none;
-  box-shadow:0 10px 25px rgba(0,0,0,0.4);
+  box-shadow:0 8px 25px rgba(0,0,0,0.4);
   animation: float 4s ease-in-out infinite;
   transition: all 0.35s ease;
 }
@@ -1902,7 +1902,7 @@ footer {
 
 /* Brand colors */
 .fb{background:#1877f2}
-.tw{background:#000}
+.tw{background:#fff}
 .ig{background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af)}
 .pt{background:#e60023}
 
@@ -2095,7 +2095,7 @@ footer {
 	}
 
 	.hero-right {
-		display: none;
+		display: center;
 	}
 
 	.cta-group {
@@ -2120,7 +2120,7 @@ footer {
 	}
 
 	.grid {
-		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
 		gap: 15px;
 	}
 
@@ -2194,6 +2194,7 @@ footer {
 	}
 
 }
+
 
 
 
