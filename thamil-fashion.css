@@ -563,7 +563,81 @@ nav.scrolled {
 	-webkit-text-fill-color: transparent;
 	font-style: italic;
 }
+/* ===============================
+   HERO IMAGE – MOBILE DISPLAY FIX
+   =============================== */
+@media (max-width: 768px) {
 
+  .hero {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    padding: 0 16px;
+  }
+
+  .hero-left {
+    padding-right: 0;
+    text-align: center;
+  }
+
+  /* SHOW IMAGE SECTION */
+  .hero-right {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+  }
+
+  .hero-image-wrapper {
+    width: 100%;
+    max-width: 320px;
+    position: relative;
+  }
+
+  .hero-carousel {
+    width: 100%;
+    height: 420px;
+    border-radius: 18px;
+    overflow: hidden;
+  }
+
+  .carousel-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+  }
+
+  .carousel-slide.active {
+    opacity: 1;
+    position: relative;
+  }
+
+  .carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* INDICATORS */
+  .carousel-indicators {
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* CLEAN MOBILE UI */
+  .floating-tags {
+    display: none;
+  }
+
+}
+
+/*
 @keyframes slideUp {
 	from {
 		transform: translateY(100%);
@@ -620,7 +694,7 @@ nav.scrolled {
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	color: var(--text-muted);
-}
+}*/
 
 .cta-group {
 	display: flex;
@@ -2193,6 +2267,7 @@ footer {
 	}
 
 }
+
 
 
 
