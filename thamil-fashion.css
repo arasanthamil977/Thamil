@@ -624,7 +624,7 @@ nav.scrolled {
 }
 
 .cta-group {
-	display: center;
+	display: right;
 	gap: 20px;
 	animation: fadeIn 1s ease 1s backwards;
 }
@@ -649,7 +649,7 @@ nav.scrolled {
 
 .cta-button.primary::before {
 	content: '';
-	position: absolute;
+	position: right;
 	top: 50%;
 	left: 50%;
 	width: 0;
@@ -685,7 +685,7 @@ nav.scrolled {
 
 .hero-right {
 	position: relative;
-	height: 120%;
+	height: 80%;
 	display: center;
 	align-items: center;
 	justify-content: center;
@@ -2194,6 +2194,7 @@ footer {
 	}
 
 }
+
 
 
 
