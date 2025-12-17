@@ -504,7 +504,7 @@ nav.scrolled {
 	margin-bottom: 30px;
 	animation: slideInLeft 1s ease;
 	position: relative;
-	overflow: hidden;
+	overflow: view;
 }
 
 .hero-badge::before {
@@ -2194,6 +2194,7 @@ footer {
 	}
 
 }
+
 
 
 
