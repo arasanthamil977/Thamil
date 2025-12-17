@@ -693,7 +693,7 @@ nav.scrolled {
 
 .hero-image-wrapper {
 	position: relative;
-	width: 100%;
+	width: 120%;
 	max-width: 500px;
 	height: 600px;
 }
@@ -710,7 +710,7 @@ nav.scrolled {
 .carousel-slide {
 	position: absolute;
 	width: 100%;
-	height: 100%;
+	height: 120%;
 	opacity: 0;
 	transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
 	transform: scale(1.1);
@@ -2194,6 +2194,7 @@ footer {
 	}
 
 }
+
 
 
 
