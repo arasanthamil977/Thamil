@@ -237,7 +237,7 @@ nav.scrolled {
 /* Tablet screens */
 
 /* Tablet screens */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
 	.hero-container {
 		grid-template-columns: 1fr;
 		text-align: center;
@@ -255,7 +255,7 @@ nav.scrolled {
 	}
 
 	.hero-right {
-		display: none;
+		display: flex;
 	}
 
 	.grid {
@@ -2194,6 +2194,7 @@ footer {
 	}
 
 }
+
 
 
 
