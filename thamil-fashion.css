@@ -101,7 +101,13 @@ nav.scrolled {
     #784ba0,
     #2b86c5,
     #00dbde,
-    #ff3cac
+    #ff3cac,
+	#ff4fd8,
+    #8a4fff,
+    #3a7bd5,
+    #00c6ff,
+    #ff4fd8
+
   );
   background-size: 800% 800%;
   -webkit-background-clip: text;
@@ -2194,6 +2200,7 @@ footer {
 	}
 
 }
+
 
 
 
