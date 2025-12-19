@@ -92,7 +92,7 @@ nav.scrolled {
 
 /* Animated gradient text */
 .logo-text {
-  font-size: 100px;
+  font-size: 90px;
   font-weight: 900;
   letter-spacing: -2px;
   background: linear-gradient(
@@ -2200,6 +2200,7 @@ footer {
 	}
 
 }
+
 
 
 
