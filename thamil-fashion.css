@@ -75,7 +75,7 @@ nav.scrolled {
   align-items: center;
   text-decoration: none;
   transition: transform 1s ease;
-  animation: logoFloat 4s ease-in-out infinite;
+  animation: logoFloat 15s ease-in-out infinite;
 }
 
 .logo-link:hover {
@@ -2200,6 +2200,7 @@ footer {
 	}
 
 }
+
 
 
 
