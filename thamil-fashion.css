@@ -255,7 +255,7 @@ nav.scrolled {
 	}
 
 	.hero-right {
-		display: center;
+		display: fixed;
 	}
 
 	.grid {
@@ -264,12 +264,12 @@ nav.scrolled {
 
 	.featured-container {
 		grid-template-columns: 1fr;
-		gap: 40px;
+		gap: 90px;
 	}
 
 	.featured-hero {
 		grid-template-columns: 1fr;
-		gap: 40px;
+		gap: 90px;
 	}
 
 	.featured-hero {
@@ -278,7 +278,7 @@ nav.scrolled {
 	}
 
 	.featured-content {
-		padding: 30px;
+		padding: 100px;
 	}
 
 	.featured-content h2 {
@@ -2194,6 +2194,7 @@ footer {
 	}
 
 }
+
 
 
 
