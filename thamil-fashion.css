@@ -693,8 +693,8 @@ nav.scrolled {
 
 .hero-image-wrapper {
 	position: center;
-	width: 500%;
-	max-width:1000px;
+	width: 100%;
+	max-width:500px;
 	height: 600px;
 }
 
@@ -2194,6 +2194,7 @@ footer {
 	}
 
 }
+
 
 
 
