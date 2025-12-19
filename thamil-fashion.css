@@ -87,12 +87,12 @@ nav.scrolled {
   width: 40px;
   height: 40px;
   margin-right: 10px;
-  animation: svgPulse 2.5s ease-in-out infinite;
+  animation: svgPulse 0.5s ease-in-out infinite;
 }
 
 /* Animated gradient text */
 .logo-text {
-  font-size: 38px;
+  font-size: 48px;
   font-weight: 900;
   letter-spacing: -2px;
   background: linear-gradient(
@@ -2194,6 +2194,7 @@ footer {
 	}
 
 }
+
 
 
 
