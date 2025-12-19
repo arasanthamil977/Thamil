@@ -685,8 +685,8 @@ nav.scrolled {
 
 .hero-right {
 	position: relative;
-	height: 150%;
-	display: fixe;
+	height: 100%;
+	display: centre;
 	align-items: center;
 	justify-content: center;
 }
@@ -694,7 +694,7 @@ nav.scrolled {
 .hero-image-wrapper {
 	position: center;
 	width: 100%;
-	max-width: 200px;
+	max-width: 120px;
 	height: 100px;
 }
 
@@ -2194,6 +2194,7 @@ footer {
 	}
 
 }
+
 
 
 
