@@ -685,8 +685,8 @@ nav.scrolled {
 
 .hero-right {
 	position: relative;
-	height: 100%;
-	display: centre;
+	height: 150%;
+	display: fixed;
 	align-items: center;
 	justify-content: center;
 }
@@ -694,8 +694,8 @@ nav.scrolled {
 .hero-image-wrapper {
 	position: center;
 	width: 100%;
-	max-width: 120px;
-	height: 100px;
+	max-width: 500px;
+	height: 600px;
 }
 
 .hero-carousel {
@@ -733,8 +733,8 @@ nav.scrolled {
 }
 
 .carousel-slide img {
-	width: 50%;
-	height:50%;
+	width: 10%;
+	height:10%;
 	object-fit: cover;
 }
 
@@ -2194,6 +2194,7 @@ footer {
 	}
 
 }
+
 
 
 
