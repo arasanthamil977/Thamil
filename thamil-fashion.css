@@ -74,7 +74,7 @@ nav.scrolled {
   display: flex;
   align-items: center;
   text-decoration: none;
-  transition: transform 0.3s ease;
+  transition: transform 0.1s ease;
   animation: logoFloat 4s ease-in-out infinite;
 }
 
@@ -92,7 +92,7 @@ nav.scrolled {
 
 /* Animated gradient text */
 .logo-text {
-  font-size: 28px;
+  font-size: 38px;
   font-weight: 900;
   letter-spacing: -2px;
   background: linear-gradient(
@@ -106,7 +106,7 @@ nav.scrolled {
   background-size: 800% 800%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: textGradient 10s linear infinite;
+  animation: textGradient 5s linear infinite;
 }
 
 /* Keyframes */
@@ -2194,6 +2194,7 @@ footer {
 	}
 
 }
+
 
 
 
