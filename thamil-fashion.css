@@ -1861,6 +1861,7 @@ footer {
 	grid-template-columns: 2fr 1fr 1fr 1fr;
 	gap: 60px;
 	margin-bottom: 60px;
+	margin-top:40px;
 }
 
 .footer-brand h3 {
@@ -2203,6 +2204,7 @@ footer {
 	}
 
 }
+
 
 
 
