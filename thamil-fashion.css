@@ -1882,7 +1882,10 @@ footer {
   gap:16px;
   margin-top:16px;
 }
-
+/* Move only the Shop column to the bottom */
+.footer-column.shop {
+    order: 99;
+}
 /* App-style base */
 .social-link{
   width:48px;
@@ -2200,6 +2203,7 @@ footer {
 	}
 
 }
+
 
 
 
