@@ -453,5 +453,107 @@ https://templatemo.com/tm-599-noir-fashion
     <script src="thamil-scripts.js"></script>
 </body>
 </html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>30mm Touch Point Animation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  height:200vh;
+  background:#05050a;
+  overflow-x:hidden;
+}
+
+/* Touch layer */
+#touch-layer{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:9999;
+}
+
+/* 30mm ≈ 113px diameter */
+.touch-ring{
+  position:absolute;
+  width:113px;
+  height:113px;
+  border-radius:50%;
+  transform:translate(-50%,-50%);
+  background:
+    radial-gradient(circle,
+      rgba(255,0,170,0.95) 0%,
+      rgba(255,0,170,0.55) 30%,
+      rgba(255,0,170,0.25) 50%,
+      rgba(255,0,170,0.1) 65%,
+      transparent 75%
+    );
+  box-shadow:
+    0 0 18px rgba(255,0,170,1),
+    0 0 45px rgba(255,0,170,0.9),
+    0 0 90px rgba(255,0,170,0.6);
+  animation:ringFade 0.22s linear forwards;
+}
+
+/* FAST animation */
+@keyframes ringFade{
+  from{
+    opacity:1;
+    transform:translate(-50%,-50%) scale(0.85);
+  }
+  to{
+    opacity:0;
+    transform:translate(-50%,-50%) scale(1.4);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div id="touch-layer"></div>
+
+<script>
+const layer = document.getElementById("touch-layer");
+let last = 0;
+
+function showRing(x,y){
+  const now = performance.now();
+  if(now - last < 10) return; // ultra-fast follow
+  last = now;
+
+  const ring = document.createElement("div");
+  ring.className = "touch-ring";
+  ring.style.left = x + "px";
+  ring.style.top = y + "px";
+
+  layer.appendChild(ring);
+  setTimeout(()=>ring.remove(),230);
+}
+
+/* TOUCH START */
+document.addEventListener("touchstart",e=>{
+  const t = e.touches[0];
+  showRing(t.clientX,t.clientY);
+},{passive:true});
+
+/* TOUCH MOVE (FOLLOW FINGER) */
+document.addEventListener("touchmove",e=>{
+  const t = e.touches[0];
+  showRing(t.clientX,t.clientY);
+},{passive:true});
+</script>
+
+</body>
+</html>
+
     
+
 
