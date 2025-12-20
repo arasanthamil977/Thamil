@@ -508,7 +508,7 @@ nav.scrolled {
 	text-transform: uppercase;
 	letter-spacing: 3px;
 	margin-bottom: 30px;
-	animation: slideInLeft 10s ease;
+	animation: slideInLeft 5s ease;
 	position: relative;
 	overflow: view;
 }
@@ -520,7 +520,7 @@ nav.scrolled {
 	height: 100%;
 	background: linear-gradient(90deg, transparent, rgba(255, 51, 102, 0.5), transparent);
 	left: -30px;
-	animation: shimmer 1s ease infinite;
+	animation: shimmer 10s ease infinite;
 }
 
 @keyframes shimmer {
@@ -2206,6 +2206,7 @@ footer {
 	}
 
 }
+
 
 
 
