@@ -1866,6 +1866,7 @@ footer {
 
 .footer-brand h3 {
 	font-size: 32px;
+	margin-top:40px;
 	margin-bottom: 20px;
 	background: linear-gradient(135deg, #fff, var(--accent));
 	-webkit-background-clip: text;
@@ -2204,6 +2205,7 @@ footer {
 	}
 
 }
+
 
 
 
