@@ -461,7 +461,7 @@ nav.scrolled {
 	left: -25%;
 	background: conic-gradient(from 180deg at 50% 50%, #ff3366 0deg, #000 60deg, #ff3366 120deg, #000 180deg, #ff3366 240deg, #000 300deg, #ff3366 360deg);
 	animation: spin 8s linear infinite;
-	opacity: 0.25;
+	opacity: 0.15;
 }
 
 .hero-bg::after {
@@ -2206,6 +2206,7 @@ footer {
 	}
 
 }
+
 
 
 
