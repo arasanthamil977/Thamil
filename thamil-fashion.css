@@ -460,7 +460,7 @@ nav.scrolled {
 	top: -25%;
 	left: -25%;
 	background: conic-gradient(from 180deg at 50% 50%, #ff3366 0deg, #000 60deg, #ff3366 120deg, #000 180deg, #ff3366 240deg, #000 300deg, #ff3366 360deg);
-	animation: spin 10s linear infinite;
+	animation: spin 1s linear infinite;
 	opacity: 1.15;
 }
 
@@ -508,7 +508,7 @@ nav.scrolled {
 	text-transform: uppercase;
 	letter-spacing: 3px;
 	margin-bottom: 30px;
-	animation: slideInLeft 1s ease;
+	animation: slideInLeft 4s ease;
 	position: relative;
 	overflow: view;
 }
@@ -520,7 +520,7 @@ nav.scrolled {
 	height: 100%;
 	background: linear-gradient(90deg, transparent, rgba(255, 51, 102, 0.5), transparent);
 	left: -30px;
-	animation: shimmer 1s ease infinite;
+	animation: shimmer 5s ease infinite;
 }
 
 @keyframes shimmer {
@@ -2206,6 +2206,7 @@ footer {
 	}
 
 }
+
 
 
 
