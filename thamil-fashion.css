@@ -508,7 +508,7 @@ nav.scrolled {
 	text-transform: uppercase;
 	letter-spacing: 3px;
 	margin-bottom: 30px;
-	animation: slideInLeft 1s ease;
+	animation: slideInLeft 10s ease;
 	position: relative;
 	overflow: view;
 }
@@ -2206,6 +2206,7 @@ footer {
 	}
 
 }
+
 
 
 
