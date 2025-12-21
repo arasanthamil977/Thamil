@@ -548,7 +548,7 @@ nav.scrolled {
 
 .hero-title .line span {
 	display: inline-block;
-	animation: slideUp 1s ease backwards;
+	animation: slideUp 11s ease backwards;
 }
 
 .hero-title .line:nth-child(1) span {
@@ -2206,6 +2206,7 @@ footer {
 	}
 
 }
+
 
 
 
