@@ -1847,10 +1847,8 @@ html, body {
 	height: 100%;
 }
 .top{
-  top: 50px;
-  left: 50%;
+  top: 500px;
   margin-bottom: 60px;
-  transform: translateX(-50%);
 }
 /* Footer */
 footer {
@@ -2199,6 +2197,7 @@ footer {
 	}
 
 }
+
 
 
 
