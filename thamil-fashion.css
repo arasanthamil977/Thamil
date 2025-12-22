@@ -1846,7 +1846,12 @@ html, body {
 	width: 100%;
 	height: 100%;
 }
-
+.top-link-btn{
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+}
 /* Footer */
 footer {
 	background: #000;
@@ -2194,6 +2199,7 @@ footer {
 	}
 
 }
+
 
 
 
