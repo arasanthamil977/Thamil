@@ -1862,7 +1862,8 @@ html, body {
 /* OPTIONAL: tighten link spacing */
 .buy-link {
   display: inline-block;
-  margin-top: 6px;
+  margin-buttom:20px;
+  margin-top: 60px;
 }
 
 /* Footer */
@@ -2212,6 +2213,7 @@ footer {
 	}
 
 }
+
 
 
 
