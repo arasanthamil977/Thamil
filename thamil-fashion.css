@@ -1889,6 +1889,10 @@ footer {
     order: 99;
 }
 /* App-style base */
+/* ===============================
+   SOCIAL ICON – ALWAYS GLOWING
+   =============================== */
+
 .social-link{
   width:48px;
   height:48px;
@@ -1896,42 +1900,69 @@ footer {
   display:flex;
   align-items:center;
   justify-content:center;
-  color:#fff;
   font-size:20px;
   position:relative;
   overflow:hidden;
   text-decoration:none;
-  box-shadow:0 8px 25px rgba(0,0,0,0.4);
-  animation: float 4s ease-in-out infinite;
-  transition: all 0.35s ease;
+
+  /* Always-on glow + float */
+  animation:
+    float 4s ease-in-out infinite,
+    neonGlow 2.6s ease-in-out infinite;
+
+  transition:transform .35s ease, box-shadow .35s ease;
 }
 
-/* Floating delay */
-.social-link:nth-child(2){animation-delay:.5s}
-.social-link:nth-child(3){animation-delay:1s}
-.social-link:nth-child(4){animation-delay:1.5s}
+/* Floating delays */
+.social-link:nth-child(2){animation-delay:.4s}
+.social-link:nth-child(3){animation-delay:.8s}
+.social-link:nth-child(4){animation-delay:1.2s}
 
-/* Brand colors */
-.fb{background:#1877f2}
-.tw{background:#fff}
-.ig{background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af)}
-.pt{background:#e60023}
+/* ===============================
+   BRAND COLORS + GLOW COLORS
+   =============================== */
 
-/* Neon glow hover */
+.fb{
+  background:#1877f2;
+  color:#1877f2;
+}
+
+.tw{
+  background:#000;
+  color:#1da1f2;
+}
+
+.ig{
+  background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af);
+  color:#dd2a7b;
+}
+
+.pt{
+  background:#e60023;
+  color:#e60023;
+}
+
+/* ===============================
+   HOVER BOOST (EXTRA ENERGY)
+   =============================== */
+
 .social-link:hover{
   transform:translateY(-8px) scale(1.15);
   box-shadow:
-    0 0 15px currentColor,
-    0 0 30px currentColor,
-    0 0 45px currentColor;
+    0 0 20px currentColor,
+    0 0 40px currentColor,
+    0 0 60px currentColor;
 }
 
-/* Ripple */
+/* ===============================
+   RIPPLE EFFECT (TOUCH)
+   =============================== */
+
 .ripple{
   position:absolute;
   width:0;
   height:0;
-  background:rgba(255,255,255,0.6);
+  background:rgba(255,255,255,.6);
   border-radius:50%;
   transform:translate(-50%,-50%);
   pointer-events:none;
@@ -1940,22 +1971,42 @@ footer {
 .social-link:active .ripple{
   width:120px;
   height:120px;
-  animation:ripple 100.6s ease-out;
+  animation:ripple .6s ease-out;
 }
 
-/* Floating animation */
+/* ===============================
+   KEYFRAMES
+   =============================== */
+
 @keyframes float{
   0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-8px)}
+  50%{transform:translateY(-10px)}
 }
 
-/* Ripple animation */
-@keyframes ripple{
-  from{opacity:0.8}
-  to{
-    opacity:0;
-    transform:scale(2.5);
+@keyframes neonGlow{
+  0%{
+    box-shadow:
+      0 0 8px currentColor,
+      0 0 16px currentColor,
+      0 0 26px currentColor;
   }
+  50%{
+    box-shadow:
+      0 0 16px currentColor,
+      0 0 32px currentColor,
+      0 0 52px currentColor;
+  }
+  100%{
+    box-shadow:
+      0 0 8px currentColor,
+      0 0 16px currentColor,
+      0 0 26px currentColor;
+  }
+}
+
+@keyframes ripple{
+  from{opacity:.6}
+  to{opacity:0}
 }
 
 
@@ -2206,6 +2257,7 @@ footer {
 	}
 
 }
+
 
 
 
