@@ -1817,6 +1817,7 @@ html, body {
 	background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
 	overflow: hidden;
 	margin-top: 60px;
+	margin-bottum:50px;
 	border-radius: 8px;
 	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
@@ -1845,8 +1846,8 @@ html, body {
 
 /* REMOVE EXTRA GAP ABOVE IMAGE */
 .map-section {
-  margin-bottom: 60;
-  padding-bottom: 50;
+  margin-bottom: 60px;
+  padding-bottom: 50px;
 }
 
 /* IMAGE SPACING FIX */
@@ -1863,6 +1864,7 @@ html, body {
 .buy-link {
   display: inline-block;
   margin-buttom:20px;
+  color: white;
   margin-top: 60px;
 }
 
@@ -2213,6 +2215,7 @@ footer {
 	}
 
 }
+
 
 
 
