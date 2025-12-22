@@ -1890,7 +1890,8 @@ footer {
 }
 /* App-style base */
 
-  .social-link{
+  
+.social-link{
   width:48px;
   height:48px;
   border-radius:14px;
@@ -1941,22 +1942,7 @@ footer {
 .social-link:active .ripple{
   width:120px;
   height:120px;
-  animation:ripple 100.6s ease-out;
-}
-
-/* Floating animation */
-@keyframes float{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-8px)}
-}
-
-/* Ripple animation */
-@keyframes ripple{
-  from{opacity:0.8}
-  to{
-    opacity:0;
-    transform:scale(2.5);
-  }
+  animation:ripple 0.6s ease-out;
 }
 
 
@@ -2208,6 +2194,7 @@ footer {
 	}
 
 }
+
 
 
 
