@@ -484,7 +484,186 @@ https://templatemo.com/tm-599-noir-fashion
 
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>THAMIL Lightning Circle Tail</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<style>
+body{
+  margin:0;
+  height:200vh;
+  background:#04040a;
+  overflow-x:hidden;
+  font-family:Arial, sans-serif;
+}
+
+/* ===== FIXED THAMIL TEXT ===== */
+#thamil-title{
+  position:fixed;
+  top:24px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:36px;
+  font-weight:900;
+  letter-spacing:4px;
+  color:hsl(var(--h),100%,70%);
+  text-shadow:
+    0 0 12px hsl(var(--h),100%,70%),
+    0 0 30px hsl(var(--h),100%,85%),
+    0 0 60px hsl(var(--h),100%,95%);
+  z-index:10000;
+  pointer-events:none;
+}
+
+/* ===== FX LAYER ===== */
+#fx-layer{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:9999;
+}
+
+/* ===== 30mm POINTER HEAD (≈113px) ===== */
+.head{
+  position:absolute;
+  width:113px;
+  height:113px;
+  border-radius:50%;
+  transform:translate(-50%,-50%);
+  background:radial-gradient(circle,
+    hsl(var(--h),100%,60%) 0%,
+    hsl(var(--h),100%,72%) 35%,
+    hsl(var(--h),100%,82%) 55%,
+    transparent 72%
+  );
+  box-shadow:
+    0 0 22px hsl(var(--h),100%,60%),
+    0 0 55px hsl(var(--h),100%,72%),
+    0 0 110px hsl(var(--h),100%,82%);
+}
+
+/* ===== LIGHTNING CIRCLE TAIL ===== */
+.circle{
+  position:absolute;
+  border-radius:50%;
+  border:2px solid hsl(var(--h),100%,80%);
+  box-shadow:
+    0 0 10px hsl(var(--h),100%,75%),
+    0 0 25px hsl(var(--h),100%,90%);
+  transform:translate(-50%,-50%) scale(0.3);
+  animation:circleFade linear forwards;
+}
+
+@keyframes circleFade{
+  from{
+    opacity:1;
+    transform:translate(-50%,-50%) scale(0.4);
+  }
+  to{
+    opacity:0;
+    transform:translate(-50%,-50%) scale(1.6);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div id="thamil-title">THAMIL</div>
+<div id="fx-layer"></div>
+
+<script>
+const layer = document.getElementById("fx-layer");
+
+/* POINTER HEAD */
+const head = document.createElement("div");
+head.className = "head";
+layer.appendChild(head);
+
+/* COLOR CONTROL */
+let hue = 320;
+
+/* TOUCH STATE */
+let active=false;
+let lx=0, ly=0, lt=0;
+
+/* Move head */
+function moveHead(x,y){
+  head.style.left = x+"px";
+  head.style.top  = y+"px";
+}
+
+/* ===== LIGHTNING CIRCLE TAIL FUNCTION ===== */
+function circleTail(x, y, dx, dy, speed){
+  const count = Math.min(10, Math.max(2, speed / 25));
+  const life  = Math.min(450, Math.max(120, speed * 2));
+  const baseSize = Math.min(80, Math.max(25, speed * 0.8));
+
+  for(let i=0;i<count;i++){
+    const c = document.createElement("div");
+    c.className = "circle";
+
+    const offset = i * 14;
+    const size = baseSize + Math.random()*30;
+
+    c.style.width = size+"px";
+    c.style.height = size+"px";
+    c.style.left = (x - dx*0.15*offset)+"px";
+    c.style.top  = (y - dy*0.15*offset)+"px";
+    c.style.animationDuration = life+"ms";
+
+    layer.appendChild(c);
+    setTimeout(()=>c.remove(), life);
+  }
+}
+
+/* TOUCH START */
+document.addEventListener("touchstart",e=>{
+  active=true;
+  const t=e.touches[0];
+  lx=t.clientX;
+  ly=t.clientY;
+  lt=performance.now();
+  moveHead(lx,ly);
+},{passive:true});
+
+/* TOUCH MOVE */
+document.addEventListener("touchmove",e=>{
+  if(!active) return;
+
+  const t=e.touches[0];
+  const now=performance.now();
+
+  const dx=t.clientX-lx;
+  const dy=t.clientY-ly;
+  const dt=now-lt||1;
+  const speed=Math.sqrt(dx*dx+dy*dy)/dt*140;
+
+  /* Color reacts */
+  hue += speed * 0.04;
+  if(hue>520) hue=320;
+  document.documentElement.style.setProperty("--h", hue);
+
+  moveHead(t.clientX,t.clientY);
+  circleTail(t.clientX,t.clientY,dx,dy,speed);
+
+  lx=t.clientX;
+  ly=t.clientY;
+  lt=now;
+},{passive:true});
+
+/* TOUCH END */
+document.addEventListener("touchend",()=>{
+  active=false;
+  head.style.left="-300px";
+});
+</script>
+
+</body>
+</html>
             
 
 
@@ -586,6 +765,7 @@ document.addEventListener("touchmove",e=>{
 </html>
 
     
+
 
 
 
