@@ -1,10 +1,8 @@
-/*
 
-TemplateMo 599 Noir Fashion
 
-https://templatemo.com/tm-599-noir-fashion
 
-*/
+
+
 
 @charset "utf-8";
 /* CSS Document */
@@ -641,9 +639,7 @@ nav.scrolled {
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	font-weight: 600;
-	font-size: 13px;
-	position: relative;
-	overflow: hidden;
+	font-size: 13phidden;
 	transition: all 0.4s ease;
 	display: inline-block;
 }
@@ -1847,6 +1843,12 @@ html, body {
 	height: 100%;
 }
 
+/* REMOVE EXTRA GAP ABOVE IMAGE */
+.map-section {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
 /* IMAGE SPACING FIX */
 .scan-image {
   display: block;          /* removes inline-image gap */
@@ -1856,8 +1858,13 @@ html, body {
   width: 100%;
   height: auto;
 }
-   
+
+/* OPTIONAL: tighten link spacing */
+.buy-link {
+  display: inline-block;
+  margin-top: 6px;
 }
+
 /* Footer */
 footer {
 	background: #000;
@@ -2205,6 +2212,7 @@ footer {
 	}
 
 }
+
 
 
 
