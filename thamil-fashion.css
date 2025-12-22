@@ -1940,7 +1940,7 @@ footer {
 .social-link:active .ripple{
   width:120px;
   height:120px;
-  animation:ripple 0.6s ease-out;
+  animation:ripple 100.6s ease-out;
 }
 
 /* Floating animation */
@@ -2206,6 +2206,7 @@ footer {
 	}
 
 }
+
 
 
 
