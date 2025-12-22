@@ -1845,15 +1845,15 @@ html, body {
 
 /* REMOVE EXTRA GAP ABOVE IMAGE */
 .map-section {
-  margin-bottom: 0;
-  padding-bottom: 0;
+  margin-bottom: 60;
+  padding-bottom: 50;
 }
 
 /* IMAGE SPACING FIX */
 .scan-image {
   display: block;          /* removes inline-image gap */
-  margin-top: 0;           /* remove top space */
-  margin-bottom: 8px;      /* small controlled gap */
+  margin-top: 20;           /* remove top space */
+  margin-bottom: 80px;      /* small controlled gap */
   padding: 0;
   width: 100%;
   height: auto;
@@ -2213,6 +2213,7 @@ footer {
 	}
 
 }
+
 
 
 
