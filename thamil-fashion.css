@@ -1961,6 +1961,81 @@ footer {
 .ripple{
   position:absolute;
   width:0;
+/* ===============================
+   SOCIAL ICON BASE
+   =============================== */
+
+.social-link{
+  width:48px;
+  height:48px;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:#fff;                 /* icon stays white */
+  font-size:20px;
+  text-decoration:none;
+
+  position:relative;
+  overflow:hidden;
+
+  animation:
+    float 4s ease-in-out infinite,
+    glowPulse 2.5s ease-in-out infinite;
+
+  transition:transform .35s ease;
+}
+
+/* Floating delays */
+.social-link:nth-child(2){animation-delay:.4s}
+.social-link:nth-child(3){animation-delay:.8s}
+.social-link:nth-child(4){animation-delay:1.2s}
+
+/* ===============================
+   BRAND BACKGROUNDS
+   =============================== */
+
+.fb{background:#1877f2}
+.tw{background:#000}
+.ig{background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af)}
+.pt{background:#e60023}
+
+/* ===============================
+   ALWAYS-ON NEON GLOW (KEY FIX)
+   =============================== */
+
+.social-link{
+  filter:
+    drop-shadow(0 0 8px rgba(255,255,255,.6))
+    drop-shadow(0 0 16px rgba(255,255,255,.4));
+}
+
+/* Brand-tinted glow */
+.fb{filter:drop-shadow(0 0 16px #1877f2)}
+.tw{filter:drop-shadow(0 0 16px #1da1f2)}
+.ig{filter:drop-shadow(0 0 16px #dd2a7b)}
+.pt{filter:drop-shadow(0 0 16px #e60023)}
+
+/* ===============================
+   HOVER BOOST
+   =============================== */
+
+.social-link:hover{
+  transform:translateY(-8px) scale(1.15);
+  filter:
+    drop-shadow(0 0 12px currentColor)
+    drop-shadow(0 0 30px currentColor)
+    drop-shadow(0 0 50px currentColor);
+}
+
+/* ===============================
+   TOUCH RIPPLE
+   =============================== */
+
+.ripple{
+  position:absolute;
+  width:0;
   height:0;
   background:rgba(255,255,255,.6);
   border-radius:50%;
@@ -1983,24 +2058,17 @@ footer {
   50%{transform:translateY(-10px)}
 }
 
-@keyframes neonGlow{
+@keyframes glowPulse{
   0%{
-    box-shadow:
-      0 0 8px currentColor,
-      0 0 16px currentColor,
-      0 0 26px currentColor;
+    filter:drop-shadow(0 0 8px currentColor);
   }
   50%{
-    box-shadow:
-      0 0 16px currentColor,
-      0 0 32px currentColor,
-      0 0 52px currentColor;
+    filter:
+      drop-shadow(0 0 16px currentColor)
+      drop-shadow(0 0 32px currentColor);
   }
   100%{
-    box-shadow:
-      0 0 8px currentColor,
-      0 0 16px currentColor,
-      0 0 26px currentColor;
+    filter:drop-shadow(0 0 8px currentColor);
   }
 }
 
@@ -2257,6 +2325,7 @@ footer {
 	}
 
 }
+
 
 
 
