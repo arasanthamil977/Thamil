@@ -1848,8 +1848,9 @@ html, body {
 }
 .top-link-btn{
   position: fixed;
-  top: 12px;
+  top: 50px;
   left: 50%;
+  margin-bottom: 60px;
   transform: translateX(-50%);
 }
 /* Footer */
@@ -2199,6 +2200,7 @@ footer {
 	}
 
 }
+
 
 
 
