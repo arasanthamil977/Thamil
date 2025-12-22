@@ -484,74 +484,7 @@ https://templatemo.com/tm-599-noir-fashion
 
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-body{
-  margin:0;
-  height:200vh;
-  background:#04040a;
-  overflow-x:hidden;
-  font-family:Arial, sans-serif;
-}
-
-/* ===== FIXED THAMIL TEXT ===== */
-#thamil-title{
-  position:fixed;
-  top:24px;
-  left:50%;
-  transform:translateX(-50%);
-  font-size:36px;
-  font-weight:900;
-  letter-spacing:4px;
-  color:hsl(var(--h),100%,70%);
-  text-shadow:
-    0 0 12px hsl(var(--h),100%,70%),
-    0 0 30px hsl(var(--h),100%,85%),
-    0 0 60px hsl(var(--h),100%,95%);
-  z-index:10000;
-  pointer-events:none;
-}
-
-/* ===== FX LAYER ===== */
-#fx-layer{
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  z-index:9999;
-}
-
-/* ===== 30mm POINTER HEAD (≈113px) ===== */
-.head{
-  position:absolute;
-  width:113px;
-  height:113px;
-  border-radius:50%;
-  transform:translate(-50%,-50%);
-  background:radial-gradient(circle,
-    hsl(var(--h),100%,60%) 0%,
-    hsl(var(--h),100%,72%) 35%,
-    hsl(var(--h),100%,82%) 55%,
-    transparent 72%
-  );
-  box-shadow:
-    0 0 22px hsl(var(--h),100%,60%),
-    0 0 55px hsl(var(--h),100%,72%),
-    0 0 110px hsl(var(--h),100%,82%);
-}
-
-/* ===== LIGHTNING CIRCLE TAIL ===== */
-.circle{
-  position:absolute;
-  border-radius:50%;
-  border:2px solid hsl(var(--h),100%,80%);
-  box-shadow:
-    0 0 10px hsl(var(--h),100%,75%),
+<!    0 0 10px hsl(var(--h),100%,75%),
     0 0 25px hsl(var(--h),100%,90%);
   transform:translate(-50%,-50%) scale(0.3);
   animation:circleFade linear forwards;
@@ -667,60 +600,76 @@ document.addEventListener("touchend",()=>{
             
 
 
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>30mm Touch Point Animation</title>
+<title>15mm Touch Circle</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 body{
   margin:0;
   height:200vh;
-  background:#05050a;
+  background:#04040a;
   overflow-x:hidden;
+  font-family:Arial, sans-serif;
 }
 
-/* Touch layer */
-#touch-layer{
+/* ===== FX LAYER ===== */
+#fx-layer{
   position:fixed;
   inset:0;
   pointer-events:none;
   z-index:9999;
 }
 
-/* 30mm ≈ 113px diameter */
-.touch-ring{
+/* ===== TOUCH CIRCLE (15 mm ≈ 57px) ===== */
+.head{
   position:absolute;
-  width:113px;
-  height:113px;
+  width:57px;           /* 15 mm */
+  height:57px;
   border-radius:50%;
   transform:translate(-50%,-50%);
-  background:
-    radial-gradient(circle,
-      rgba(255,0,170,0.95) 0%,
-      rgba(255,0,170,0.55) 30%,
-      rgba(255,0,170,0.25) 50%,
-      rgba(255,0,170,0.1) 65%,
-      transparent 75%
-    );
+  background:radial-gradient(circle,
+    hsl(var(--h),100%,60%) 0%,
+    hsl(var(--h),100%,72%) 35%,
+    hsl(var(--h),100%,82%) 55%,
+    transparent 72%
+  );
   box-shadow:
-    0 0 18px rgba(255,0,170,1),
-    0 0 45px rgba(255,0,170,0.9),
-    0 0 90px rgba(255,0,170,0.6);
-  animation:ringFade 0.22s linear forwards;
+    0 0 14px hsl(var(--h),100%,60%),
+    0 0 32px hsl(var(--h),100%,72%),
+    0 0 60px hsl(var(--h),100%,82%);
 }
 
-/* FAST animation */
-@keyframes ringFade{
+/* ===== LIGHTNING CIRCLE TAIL (unchanged, small) ===== */
+.circle{
+  position:absolute;
+  width:19px;          /* 5 mm tail circles */
+  height:19px;
+  border-radius:50%;
+  border:1.5px solid hsl(var(--h),100%,80%);
+  box-shadow:
+    0 0 5px hsl(var(--h),100%,75%),
+    0 0 10px hsl(var(--h),100%,90%);
+  transform:translate(-50%,-50%) scale(0.5);
+  animation:circleFade linear forwards;
+}
+
+@keyframes circleFade{
   from{
     opacity:1;
-    transform:translate(-50%,-50%) scale(0.85);
+    transform:translate(-50%,-50%) scale(0.6);
   }
   to{
     opacity:0;
-    transform:translate(-50%,-50%) scale(1.4);
+    transform:translate(-50%,-50%) scale(1.5);
   }
 }
 </style>
@@ -728,47 +677,87 @@ body{
 
 <body>
 
-<div id="touch-layer"></div>
+<div id="fx-layer"></div>
 
 <script>
-const layer = document.getElementById("touch-layer");
-let last = 0;
+const layer = document.getElementById("fx-layer");
 
-function showRing(x,y){
-  const now = performance.now();
-  if(now - last < 10) return; // ultra-fast follow
-  last = now;
+/* ===== TOUCH HEAD ===== */
+const head = document.createElement("div");
+head.className = "head";
+layer.appendChild(head);
 
-  const ring = document.createElement("div");
-  ring.className = "touch-ring";
-  ring.style.left = x + "px";
-  ring.style.top = y + "px";
+/* ===== COLOR CONTROL ===== */
+let hue = 320;
 
-  layer.appendChild(ring);
-  setTimeout(()=>ring.remove(),230);
+/* ===== TOUCH STATE ===== */
+let active=false;
+let lx=0, ly=0, lt=0;
+
+/* Move touch circle */
+function moveHead(x,y){
+  head.style.left = x+"px";
+  head.style.top  = y+"px";
 }
 
-/* TOUCH START */
+/* ===== TAIL (unchanged) ===== */
+function circleTail(x, y, dx, dy, speed){
+  const count = Math.min(14, Math.max(2, speed / 20));
+  const life  = Math.min(420, Math.max(100, speed * 1.8));
+
+  for(let i=0;i<count;i++){
+    const c = document.createElement("div");
+    c.className = "circle";
+
+    const offset = i * 10;
+    c.style.left = (x - dx * 0.12 * offset) + "px";
+    c.style.top  = (y - dy * 0.12 * offset) + "px";
+    c.style.animationDuration = life + "ms";
+
+    layer.appendChild(c);
+    setTimeout(()=>c.remove(), life);
+  }
+}
+
+/* ===== TOUCH EVENTS ===== */
 document.addEventListener("touchstart",e=>{
-  const t = e.touches[0];
-  showRing(t.clientX,t.clientY);
+  active=true;
+  const t=e.touches[0];
+  lx=t.clientX;
+  ly=t.clientY;
+  lt=performance.now();
+  moveHead(lx,ly);
 },{passive:true});
 
-/* TOUCH MOVE (FOLLOW FINGER) */
 document.addEventListener("touchmove",e=>{
-  const t = e.touches[0];
-  showRing(t.clientX,t.clientY);
+  if(!active) return;
+
+  const t=e.touches[0];
+  const now=performance.now();
+
+  const dx=t.clientX-lx;
+  const dy=t.clientY-ly;
+  const dt=now-lt||1;
+  const speed=Math.sqrt(dx*dx+dy*dy)/dt*140;
+
+  /* Auto color change */
+  hue += speed * 0.04;
+  if(hue>520) hue=320;
+  document.documentElement.style.setProperty("--h", hue);
+
+  moveHead(t.clientX,t.clientY);
+  circleTail(t.clientX,t.clientY,dx,dy,speed);
+
+  lx=t.clientX;
+  ly=t.clientY;
+  lt=now;
 },{passive:true});
+
+document.addEventListener("touchend",()=>{
+  active=false;
+  head.style.left="-300px";
+});
 </script>
 
 </body>
 </html>
-
-    
-
-
-
-
-
-
-
